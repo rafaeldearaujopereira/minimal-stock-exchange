@@ -1,2 +1,2 @@
 # minimal-stock-exchange
-a minimal stock exchange implementation.
+a minimal stock exchange implementation
