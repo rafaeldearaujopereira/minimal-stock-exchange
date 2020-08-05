@@ -1,8 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_rsCyoNReEeqPG-UZgyvsEg" name="MinimalStockExchangeUML">
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_rsCyoNReEeqPG-UZgyvsEg" name="MinimalStockExchangeUML">
   <packageImport xmi:type="uml:PackageImport" xmi:id="_rvdTANReEeqPG-UZgyvsEg">
     <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
   </packageImport>
-  <packagedElement xmi:type="uml:Class" xmi:id="_6j4woNReEeqPG-UZgyvsEg" name="Instrument"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_8_FnwNReEeqPG-UZgyvsEg" name="Book"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_dlcuYNauEeqhn74JtLHoBA" name="Model">
+    <ownedComment xmi:type="uml:Comment" xmi:id="_0IzmkNauEeqhn74JtLHoBA" annotatedElement="_kdlD0NauEeqhn74JtLHoBA">
+      <body>A instrument has two books, &#xD;
+one for Bid (buy orders) and one for Ask (sell orders)</body>
+    </ownedComment>
+    <ownedComment xmi:type="uml:Comment" xmi:id="_HmIh8NavEeqhn74JtLHoBA" annotatedElement="_paQZMNauEeqhn74JtLHoBA">
+      <body>A book is a set of book prices ordered by the best price.&#xD;
+Higher prices for Bid, lower for Ask.</body>
+    </ownedComment>
+    <ownedComment xmi:type="uml:Comment" xmi:id="_wD24gNawEeqhn74JtLHoBA" annotatedElement="_I6KgMNawEeqhn74JtLHoBA">
+      <body>A book price has a set of orders ordered by the last modification of the price.</body>
+    </ownedComment>
+    <packagedElement xmi:type="uml:Class" xmi:id="_jIuJsNauEeqhn74JtLHoBA" name="Instrument">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_wJEakNauEeqhn74JtLHoBA" name="books" type="_kdlD0NauEeqhn74JtLHoBA" aggregation="shared" association="_wJDzgNauEeqhn74JtLHoBA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wJIsANauEeqhn74JtLHoBA" value="2"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wJMWYNauEeqhn74JtLHoBA" value="2"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_BO220NavEeqhn74JtLHoBA" name="code">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_kvXsgNawEeqhn74JtLHoBA" name="priceIncrement">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBigDecimal"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_qFnYcNawEeqhn74JtLHoBA" name="lotSize">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_kdlD0NauEeqhn74JtLHoBA" name="Book">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_mulnsNavEeqhn74JtLHoBA" name="bookprices" type="_paQZMNauEeqhn74JtLHoBA" aggregation="composite" association="_mujygNavEeqhn74JtLHoBA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nQtdUNavEeqhn74JtLHoBA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pNpEENavEeqhn74JtLHoBA" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_2hs7INavEeqhn74JtLHoBA" name="side">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEnumerator"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_paQZMNauEeqhn74JtLHoBA" name="BookPrice">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_MunpQNawEeqhn74JtLHoBA" name="orders" type="_I6KgMNawEeqhn74JtLHoBA" aggregation="composite" association="_MumbINawEeqhn74JtLHoBA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OoDQENawEeqhn74JtLHoBA" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_S0h3kNawEeqhn74JtLHoBA" name="price">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBigDecimal"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_wJDzgNauEeqhn74JtLHoBA" memberEnd="_wJEakNauEeqhn74JtLHoBA _wJQAwNauEeqhn74JtLHoBA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_wJDzgdauEeqhn74JtLHoBA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_wJDzgtauEeqhn74JtLHoBA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_wJQAwNauEeqhn74JtLHoBA" name="instrument" type="_jIuJsNauEeqhn74JtLHoBA" association="_wJDzgNauEeqhn74JtLHoBA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_mujygNavEeqhn74JtLHoBA" memberEnd="_mulnsNavEeqhn74JtLHoBA _muzDENavEeqhn74JtLHoBA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_mulAoNavEeqhn74JtLHoBA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_mulAodavEeqhn74JtLHoBA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_muzDENavEeqhn74JtLHoBA" name="book" type="_kdlD0NauEeqhn74JtLHoBA" association="_mujygNavEeqhn74JtLHoBA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_I6KgMNawEeqhn74JtLHoBA" name="Order">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_QGP28taxEeqhn74JtLHoBA" name="trades" type="_LQpZ8NaxEeqhn74JtLHoBA" association="_QGPP4NaxEeqhn74JtLHoBA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RaDoMNaxEeqhn74JtLHoBA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Q_cIwNaxEeqhn74JtLHoBA" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_hG7JstaxEeqhn74JtLHoBA" name="orderhistory" type="_YwiGgNaxEeqhn74JtLHoBA" aggregation="shared" association="_hG6ioNaxEeqhn74JtLHoBA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hG7wwNaxEeqhn74JtLHoBA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hG7wwdaxEeqhn74JtLHoBA" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_MumbINawEeqhn74JtLHoBA" memberEnd="_MunpQNawEeqhn74JtLHoBA _Muo3YNawEeqhn74JtLHoBA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_MunCMNawEeqhn74JtLHoBA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_MunCMdawEeqhn74JtLHoBA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_Muo3YNawEeqhn74JtLHoBA" name="bookprice" type="_paQZMNauEeqhn74JtLHoBA" association="_MumbINawEeqhn74JtLHoBA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_LQpZ8NaxEeqhn74JtLHoBA" name="Trade"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_QGPP4NaxEeqhn74JtLHoBA" memberEnd="_QGP28taxEeqhn74JtLHoBA _QGQeAtaxEeqhn74JtLHoBA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_QGP28NaxEeqhn74JtLHoBA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QGP28daxEeqhn74JtLHoBA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_QGQeAtaxEeqhn74JtLHoBA" name="order" type="_I6KgMNawEeqhn74JtLHoBA" association="_QGPP4NaxEeqhn74JtLHoBA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_YwiGgNaxEeqhn74JtLHoBA" name="OrderHistory"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_hG6ioNaxEeqhn74JtLHoBA" memberEnd="_hG7JstaxEeqhn74JtLHoBA _hG7wwtaxEeqhn74JtLHoBA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hG7JsNaxEeqhn74JtLHoBA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hG7JsdaxEeqhn74JtLHoBA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_hG7wwtaxEeqhn74JtLHoBA" name="order" type="_I6KgMNawEeqhn74JtLHoBA" association="_hG6ioNaxEeqhn74JtLHoBA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_oxXs4NaxEeqhn74JtLHoBA" name="Client">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_ydMR8NaxEeqhn74JtLHoBA" name="orders" type="_I6KgMNawEeqhn74JtLHoBA" aggregation="shared" association="_ydKcwNaxEeqhn74JtLHoBA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ydM5ANaxEeqhn74JtLHoBA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ydM5AdaxEeqhn74JtLHoBA" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_ydKcwNaxEeqhn74JtLHoBA" memberEnd="_ydMR8NaxEeqhn74JtLHoBA _ydM5AtaxEeqhn74JtLHoBA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ydLq4NaxEeqhn74JtLHoBA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ydLq4daxEeqhn74JtLHoBA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_ydM5AtaxEeqhn74JtLHoBA" name="client" type="_oxXs4NaxEeqhn74JtLHoBA" association="_ydKcwNaxEeqhn74JtLHoBA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_GpJ08NayEeqhn74JtLHoBA" name="Session">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_PEkiEtayEeqhn74JtLHoBA" name="orders" type="_I6KgMNawEeqhn74JtLHoBA" aggregation="shared" association="_PEj7ANayEeqhn74JtLHoBA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PElJINayEeqhn74JtLHoBA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PElJIdayEeqhn74JtLHoBA" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_PEj7ANayEeqhn74JtLHoBA" memberEnd="_PEkiEtayEeqhn74JtLHoBA _PElJItayEeqhn74JtLHoBA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_PEkiENayEeqhn74JtLHoBA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_PEkiEdayEeqhn74JtLHoBA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_PElJItayEeqhn74JtLHoBA" name="session" type="_GpJ08NayEeqhn74JtLHoBA" association="_PEj7ANayEeqhn74JtLHoBA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_SU31MNayEeqhn74JtLHoBA" name="BrokerageFirm">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_in0fQtayEeqhn74JtLHoBA" name="clients" type="_oxXs4NaxEeqhn74JtLHoBA" aggregation="shared" association="_inz4MNayEeqhn74JtLHoBA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_in1GUNayEeqhn74JtLHoBA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_in1GUdayEeqhn74JtLHoBA" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_k917cNayEeqhn74JtLHoBA" name="sessions" type="_GpJ08NayEeqhn74JtLHoBA" aggregation="shared" association="_k90GQNayEeqhn74JtLHoBA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_k92igNayEeqhn74JtLHoBA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_k92igdayEeqhn74JtLHoBA" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_inz4MNayEeqhn74JtLHoBA" memberEnd="_in0fQtayEeqhn74JtLHoBA _in1tYNayEeqhn74JtLHoBA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_in0fQNayEeqhn74JtLHoBA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_in0fQdayEeqhn74JtLHoBA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_in1tYNayEeqhn74JtLHoBA" name="brokeragefirm" type="_SU31MNayEeqhn74JtLHoBA" association="_inz4MNayEeqhn74JtLHoBA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_k90GQNayEeqhn74JtLHoBA" memberEnd="_k917cNayEeqhn74JtLHoBA _k92igtayEeqhn74JtLHoBA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k91UYNayEeqhn74JtLHoBA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k91UYdayEeqhn74JtLHoBA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_k92igtayEeqhn74JtLHoBA" name="brokeragefirm" type="_SU31MNayEeqhn74JtLHoBA" association="_k90GQNayEeqhn74JtLHoBA"/>
+    </packagedElement>
+  </packagedElement>
 </uml:Model>
