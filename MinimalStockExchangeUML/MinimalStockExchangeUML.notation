@@ -579,4 +579,17 @@
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_k-8HoNayEeqhn74JtLHoBA" id="(0.0,0.4)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_k-8HodayEeqhn74JtLHoBA" id="(0.6,1.0)"/>
   </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_GSUMEIXnEeuYX6rMI6Y_5Q" type="Dependency_Edge" source="_I6MVYNawEeqhn74JtLHoBA" target="_lBUqENauEeqhn74JtLHoBA">
+    <children xmi:type="notation:DecorationNode" xmi:id="_GSgZUIXnEeuYX6rMI6Y_5Q" type="Dependency_NameLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_GSgZUYXnEeuYX6rMI6Y_5Q" y="40"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_GSgZUoXnEeuYX6rMI6Y_5Q" type="Dependency_StereotypeLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_GSgZU4XnEeuYX6rMI6Y_5Q" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_GSUMEYXnEeuYX6rMI6Y_5Q"/>
+    <element xmi:type="uml:Dependency" href="MinimalStockExchangeUML.uml#_GR-N0IXnEeuYX6rMI6Y_5Q"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GSUMEoXnEeuYX6rMI6Y_5Q" points="[580, 340, -643984, -643984]$[233, 480, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GVT1sIXnEeuYX6rMI6Y_5Q" id="(0.0,0.6)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GVT1sYXnEeuYX6rMI6Y_5Q" id="(1.0,0.15267175572519084)"/>
+  </edges>
 </notation:Diagram>

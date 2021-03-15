@@ -135,5 +135,6 @@ Higher prices for Bid, lower for Ask.</body>
       </eAnnotations>
       <ownedEnd xmi:type="uml:Property" xmi:id="_k92igtayEeqhn74JtLHoBA" name="brokeragefirm" type="_SU31MNayEeqhn74JtLHoBA" association="_k90GQNayEeqhn74JtLHoBA"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_GR-N0IXnEeuYX6rMI6Y_5Q" client="_I6KgMNawEeqhn74JtLHoBA" supplier="_jIuJsNauEeqhn74JtLHoBA"/>
   </packagedElement>
 </uml:Model>
