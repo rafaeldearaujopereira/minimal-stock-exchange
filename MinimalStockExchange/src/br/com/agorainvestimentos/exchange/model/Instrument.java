@@ -9,10 +9,14 @@ public class Instrument {
 	private String name;
 
 	private String description;
-	
+
 	private BigDecimal priceIncrement;
-	
+
 	private Long lotSize;
+
+	private Book askBook;
+
+	private Book bidBook;
 
 	public String getCode() {
 		return code;
@@ -53,7 +57,21 @@ public class Instrument {
 	public void setLotSize(Long lotSize) {
 		this.lotSize = lotSize;
 	}
-	
-	
+
+	public Book getAskBook() {
+		return askBook;
+	}
+
+	public void setAskBook(Book askBook) {
+		this.askBook = askBook;
+	}
+
+	public Book getBidBook() {
+		return bidBook;
+	}
+
+	public void setBidBook(Book bidBook) {
+		this.bidBook = bidBook;
+	}
 
 }
