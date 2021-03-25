@@ -1,5 +1,7 @@
 package br.com.agorainvestimentos.exchange.model;
 
+import java.math.BigDecimal;
+
 public class Instrument {
 
 	private String code;
@@ -7,6 +9,10 @@ public class Instrument {
 	private String name;
 
 	private String description;
+	
+	private BigDecimal priceIncrement;
+	
+	private Long lotSize;
 
 	public String getCode() {
 		return code;
@@ -31,5 +37,23 @@ public class Instrument {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
+	public BigDecimal getPriceIncrement() {
+		return priceIncrement;
+	}
+
+	public void setPriceIncrement(BigDecimal priceIncrement) {
+		this.priceIncrement = priceIncrement;
+	}
+
+	public Long getLotSize() {
+		return lotSize;
+	}
+
+	public void setLotSize(Long lotSize) {
+		this.lotSize = lotSize;
+	}
+	
+	
 
 }
