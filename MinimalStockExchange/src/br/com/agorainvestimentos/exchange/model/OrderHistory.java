@@ -7,6 +7,8 @@ public class OrderHistory {
 	private Order order;
 
 	private Date dateTime;
+	
+	private OrderStatus status;
 
 	public Order getOrder() {
 		return order;
@@ -23,5 +25,14 @@ public class OrderHistory {
 	public void setDateTime(Date dateTime) {
 		this.dateTime = dateTime;
 	}
+
+	public OrderStatus getStatus() {
+		return status;
+	}
+
+	public void setStatus(OrderStatus status) {
+		this.status = status;
+	}
+	
 
 }
